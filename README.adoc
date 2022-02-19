@@ -1,0 +1,26 @@
+= Zsh Configuration for Alpine Linux
+:proj-name: alpine-zsh-config
+:gh-name: jirutka/{proj-name}
+:version: 0.0.0
+
+The aim of this project is to provide a sensible default (system-wide) https://www.zsh.org/[Zsh] configuration that will meet the basic needs and expectations of most users.
+In other words, make Zsh easy to use right out of the box, without having to configure it, while not getting in the way of individual user customization.
+
+
+== Requirements
+
+* https://pkgs.alpinelinux.org/packages?name=zsh[zsh] >=5.8.1-r1
+
+
+== Installation
+
+Install package https://pkgs.alpinelinux.org/packages?name={proj-name}[{proj-name}] on Alpine Linux Edge, v3.16 or later:
+
+[source, sh, subs="+attributes"]
+apk add {proj-name}
+
+
+== License
+
+This project is licensed under http://opensource.org/licenses/MIT/[MIT License].
+For the full text of the license, see the link:LICENSE[LICENSE] file.
