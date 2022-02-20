@@ -13,15 +13,18 @@ zle -N down-line-or-beginning-search
 
 # Make sure that the terminal is in application mode when zle is active,
 # since only then values from $terminfo are valid.
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-	function zle-line-init() {
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+
+	function zshrc::term-application-mode() {
 		echoti smkx
 	}
-	function zle-line-finish() {
+	add-zle-hook-widget zle-line-init zshrc::term-application-mode
+
+	function zshrc::term-normal-mode() {
 		echoti rmkx
 	}
-	zle -N zle-line-init
-	zle -N zle-line-finish
+	add-zle-hook-widget zle-line-finish zshrc::term-normal-mode
 fi
 
 # `seq` is a fallback for the case when terminfo is not available.
