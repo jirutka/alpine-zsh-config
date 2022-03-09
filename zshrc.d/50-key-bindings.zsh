@@ -41,6 +41,7 @@ for	kcap   seq        widget (                       # key name
 	kcud1  '^[[B'     down-line-or-beginning-search  # DownArrow - fuzzy find history backward
 	kcud1  '^[OB'     down-line-or-beginning-search  # DownArrow - fuzzy find history backward (in app mode)
 	kcbt   '^[[Z'     reverse-menu-complete          # Shift + Tab
+	x      '^[[2;5~'  copy-region-as-kill            # Ctrl + Insert
 	kDC5   '^[[3;5~'  kill-word                      # Ctrl + Delete
 	kRIT5  '^[[1;5C'  forward-word                   # Ctrl + RightArrow
 	kLFT5  '^[[1;5D'  backward-word                  # Ctrl + LeftArrow
