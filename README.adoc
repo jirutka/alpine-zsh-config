@@ -10,6 +10,7 @@ In other words, make Zsh easy to use right out of the box, without having to con
 == Requirements
 
 * https://pkgs.alpinelinux.org/packages?name=zsh[zsh] >=5.8.1-r1
+* https://pkgs.alpinelinux.org/packages?name=wl-clipboard[wl-clipboard], https://pkgs.alpinelinux.org/packages?name=xclip[xclip] or https://pkgs.alpinelinux.org/packages?name=tty-copy[tty-copy] for integration with the system clipboard (optional)
 
 
 == Installation
