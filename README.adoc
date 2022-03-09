@@ -2,9 +2,31 @@
 :proj-name: alpine-zsh-config
 :gh-name: jirutka/{proj-name}
 :version: 0.0.0
+// Enable kbd:[] macro
+:experimental:
 
 The aim of this project is to provide a sensible default (system-wide) https://www.zsh.org/[Zsh] configuration that will meet the basic needs and expectations of most users.
 In other words, make Zsh easy to use right out of the box, without having to configure it, while not getting in the way of individual user customization.
+
+
+== Features
+
+=== Key Bindings
+
+List of key bindings defined in the `emacs`, `viins`, and `vicmd` keymaps.
+
+* kbd:[Home] – move cursor to the beginning of a line
+* kbd:[End] – move cursor to the end of a line
+* kbd:[Delete] – delete the next character
+* kbd:[Page Up] – move cursor up a line, or if already at the top line, move to the previous event in the history
+* kbd:[Page Down] – move cursor down a line, or if already at the bottom line, move to the next event in the history
+* kbd:[Up Arrow] – move cursor up a line, or if already at the top line, fuzzy search _backward_ in the history for a line beginning with a whole line prefix up to the cursor position
+* kbd:[Down Arrow] – move cursor down a line, or if already at the bottom line, fuzzy search _forward_ in the history for a line beginning with a whole line prefix up to the cursor position
+* kbd:[Shift + Tab] – perform menu completion, or if a menu completion is already in progress, move to the previous completion
+* kbd:[Ctrl + Insert] – copy the area from cursor to the mark to the kill buffer and clipboard (if available)
+* kbd:[Ctrl + Delete] – delete (and copy) the next word
+* kbd:[Ctrl + Left Arrow] – move cursor to the beginning of the previous word
+* kbd:[Ctrl + Right Arrow] – move cursor to the beginning of the next word
 
 
 == Requirements
