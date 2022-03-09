@@ -4,6 +4,8 @@
 
 command_not_found_handler() {
 	local cmd=$1
+
+	emulate -L zsh
 	setopt pipefail local_options
 
 	local fg_grey1= fg_grey2=
