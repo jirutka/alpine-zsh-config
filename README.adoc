@@ -29,6 +29,39 @@ List of key bindings defined in the `emacs`, `viins`, and `vicmd` keymaps.
 * kbd:[Ctrl + Right Arrow] – move cursor to the beginning of the next word
 
 
+== Configuration Variables
+
+Users can define the following configuration variables in their `$ZDOTDIR/.zshenv` (by default `~/.config/zsh/.zshenv`, or `~/.zshenv` if `~/.zshrc` exists) to override the default settings.
+
+|===
+| Variable Name | Default Value | Description
+
+| ZSH_CACHE_DIR
+| `$XDG_CACHE_HOME/zsh` or `$HOME/.cache/zsh`
+| Path to a directory where to store cache files (e.g. completion cache). If it doesn’t exist, it will be created.
+
+| ZSH_DATA_DIR
+| `$XDG_DATA_HOME/zsh` or `$HOME/.local/share/zsh`
+| Path to a directory where to store persistent data files (e.g. Zsh history). If it doesn’t exist, it will be created.
+
+| ZSH_COMPDUMP
+| `$ZSH_CACHE_DIR/zcompdump`
+| Path to the Zsh completion dump file.
+
+| HISTFILE
+| `$ZSH_DATA_DIR/history` or `$ZDOTDIR/.zsh_history` or `$HOME/.zsh_history`
+| Path to the Zsh history file. If `${ZDOTDIR:-$HOME}/.zsh_history` exists, it will be preferred.
+
+| ZSH_CUTBUFFER_CLIPBOARD
+| `"primary"`
+| The system clipboard to synchronize the kill (cut) buffer with; either `"primary"` (selection), or `"clipboard"` (regular clipboard).
+
+| osc52_supported_terms
+| `('alacritty' 'foot' 'xterm-kitty')`
+| An array of `$TERM` values that identify terminals with OSC 52 support (access to system clipboard). This is just a shortcut to skip dynamic detection using `tty-copy --test` for known terminals.
+|===
+
+
 == Requirements
 
 * https://pkgs.alpinelinux.org/packages?name=zsh[zsh] >=5.8.1-r1
