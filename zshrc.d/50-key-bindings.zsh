@@ -36,10 +36,10 @@ for	kcap   seq        widget (                       # key name
 	kdch1  '^[[3~'    delete-char                    # Delete
 	kpp    '^[[5~'    up-line-or-history             # PageUp
 	knp    '^[[6~'    down-line-or-history           # PageDown
-	kcuu1  '^[[A'     up-line-or-beginning-search    # UpArrow - fuzzy find history forward
-	kcuu1  '^[OA'     up-line-or-beginning-search    # UpArrow - fuzzy find history forward (in app mode)
-	kcud1  '^[[B'     down-line-or-beginning-search  # DownArrow - fuzzy find history backward
-	kcud1  '^[OB'     down-line-or-beginning-search  # DownArrow - fuzzy find history backward (in app mode)
+	kcuu1  '^[[A'     up-line-or-beginning-search    # UpArrow - fuzzy find history backward
+	kcuu1  '^[OA'     up-line-or-beginning-search    # UpArrow - fuzzy find history backward (in app mode)
+	kcud1  '^[[B'     down-line-or-beginning-search  # DownArrow - fuzzy find history forward
+	kcud1  '^[OB'     down-line-or-beginning-search  # DownArrow - fuzzy find history forward (in app mode)
 	kcbt   '^[[Z'     reverse-menu-complete          # Shift + Tab
 	x      '^[[2;5~'  copy-region-as-kill            # Ctrl + Insert
 	kDC5   '^[[3;5~'  kill-word                      # Ctrl + Delete
