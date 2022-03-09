@@ -10,7 +10,7 @@ zstyle ':completion:*' cache-path "${ZSH_CACHE_DIR:?}/zcompcache"
 # older than one of the directories where completion files are installed or
 # it's older than 24 hours.
 # https://gist.github.com/ctechols/ca1035271ad134841284
-function {
+function () {
 	setopt extendedglob local_options  # note: we use function to keep this local
 	local dir= refresh=0
 
