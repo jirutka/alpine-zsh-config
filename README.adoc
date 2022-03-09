@@ -1,7 +1,6 @@
 = Zsh Configuration for Alpine Linux
 :proj-name: alpine-zsh-config
 :gh-name: jirutka/{proj-name}
-:version: 0.0.0
 // Enable kbd:[] macro
 :experimental:
 
