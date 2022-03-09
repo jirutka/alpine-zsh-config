@@ -10,6 +10,16 @@ In other words, make Zsh easy to use right out of the box, without having to con
 
 == Features
 
+* XDG-based locations for Zsh data and cache files. ^link:zshrc.d/10-base-dirs.zsh[10-base-dirs.zsh]^
+* Some basic aliases that most people expect. ^link:zshrc.d/50-aliases.zsh[50-aliases.zsh]^
+* Command not found handler for apk-tools. ^link:zshrc.d/50-command-not-found.zsh[50-command-not-found.zsh]^
+* Reasonable history defaults. ^link:zshrc.d/50-history.zsh[50-history.zsh]^
+* Global <<Key Bindings,key bindings>> consistent with `/etc/inputrc` (and thus with ash, bash and any other program using readline). ^link:zshrc.d/50-key-bindings.zsh[50-key-bindings.zsh]^
+* Miscellaneous useful options. ^link:zshrc.d/50-misc.zsh[50-misc.zsh]^
+* Integration with the system clipboard – copies the kill (cut) buffer to the system clipboard on each change (e.g. on kbd:[Ctrl + Insert], kbd:[Ctrl + W], …). ^link:zshrc.d/70-clipboard.zsh[70-clipboard.zsh]^
+* Initialization of the completion system with reasonable defaults and caching. ^link:zshrc.d/70-completion.zsh[70-completion.zsh]^
+
+
 === Key Bindings
 
 List of key bindings defined in the `emacs`, `viins`, and `vicmd` keymaps.
