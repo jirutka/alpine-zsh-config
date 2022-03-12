@@ -23,7 +23,7 @@ function () {
 		function zshrc::clip-copy() {
 			local opts=
 			[[ "$ZSH_CUTBUFFER_CLIPBOARD" = 'primary' ]] && opts='--primary'
-			wl-copy $opts "$@"
+			wl-copy $opts -- "$@"
 		}
 	elif [[ -n "${DISPLAY-}" ]] && (( ${+commands[xclip]} )); then
 		function zshrc::clip-copy() {
@@ -35,7 +35,7 @@ function () {
 		function zshrc::clip-copy() {
 			local opts=
 			[[ "$ZSH_CUTBUFFER_CLIPBOARD" = 'primary' ]] && opts='--primary'
-			tty-copy $opts "$@"
+			tty-copy $opts -- "$@"
 		}
 	else
 		return
