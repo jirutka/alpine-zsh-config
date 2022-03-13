@@ -19,15 +19,15 @@ function () {
 	if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 		autoload -U add-zle-hook-widget
 
-		function zshrc::term-application-mode() {
+		function .zshrc::term-application-mode() {
 			echoti smkx
 		}
-		add-zle-hook-widget zle-line-init zshrc::term-application-mode
+		add-zle-hook-widget zle-line-init .zshrc::term-application-mode
 
-		function zshrc::term-normal-mode() {
+		function .zshrc::term-normal-mode() {
 			echoti rmkx
 		}
-		add-zle-hook-widget zle-line-finish zshrc::term-normal-mode
+		add-zle-hook-widget zle-line-finish .zshrc::term-normal-mode
 	fi
 
 	# `seq` is a fallback for the case when terminfo is not available.

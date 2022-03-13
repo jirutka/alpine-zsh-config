@@ -20,19 +20,19 @@ function () {
 	emulate -L zsh
 
 	if [[ -n "${WAYLAND_DISPLAY-}" ]] && (( ${+commands[wl-copy]} )); then
-		function zshrc::clip-copy() {
+		function .zshrc::clip-copy() {
 			local opts=
 			[[ "$ZSH_CUTBUFFER_CLIPBOARD" = 'primary' ]] && opts='--primary'
 			wl-copy $opts -- "$@"
 		}
 	elif [[ -n "${DISPLAY-}" ]] && (( ${+commands[xclip]} )); then
-		function zshrc::clip-copy() {
+		function .zshrc::clip-copy() {
 			printf '%s' "$*" | xclip -in -selection ${ZSH_CUTBUFFER_CLIPBOARD:-primary}
 		}
 	elif (( ${+commands[tty-copy]} )) \
 		&& { (( ${osc52_supported_terms[(Ie)$TERM]} )) || tty-copy --test; };
 	then
-		function zshrc::clip-copy() {
+		function .zshrc::clip-copy() {
 			local opts=
 			[[ "$ZSH_CUTBUFFER_CLIPBOARD" = 'primary' ]] && opts='--primary'
 			tty-copy $opts -- "$@"
@@ -45,13 +45,13 @@ function () {
 
 	declare -gH _ZSHRC_CUTBUFFER_LAST=''
 
-	function zshrc::sync-cutbuffer-with-clipboard() {
+	function .zshrc::sync-cutbuffer-with-clipboard() {
 		if [[ "$CUTBUFFER" != "$_ZSHRC_CUTBUFFER_LAST" ]]; then
-			zshrc::clip-copy "$CUTBUFFER"
+			.zshrc::clip-copy "$CUTBUFFER"
 			_ZSHRC_CUTBUFFER_LAST=$CUTBUFFER
 		fi
 	}
-	add-zle-hook-widget line-pre-redraw zshrc::sync-cutbuffer-with-clipboard
+	add-zle-hook-widget line-pre-redraw .zshrc::sync-cutbuffer-with-clipboard
 }
 
 # vim: set ts=4:
