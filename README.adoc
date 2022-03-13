@@ -19,6 +19,8 @@ In other words, make Zsh easy to use right out of the box, without having to con
 * Integration with the system clipboard – copies the kill (cut) buffer to the system clipboard on each change (e.g. on kbd:[Ctrl + Insert], kbd:[Ctrl + W], …). ^link:zshrc.d/70-clipboard.zsh[70-clipboard.zsh]^
 * Initialization of the completion system with reasonable defaults and caching. ^link:zshrc.d/70-completion.zsh[70-completion.zsh]^
 
+TIP: If you as a user want to disable some of these features, define variable `zshrc_blacklist` with an array of the script names (without `.zsh` suffix) in your `$ZDOTDIR/.zshenv` footnote:zshenv[`$ZDOTDIR/.zshenv` is by default `~/.config/zsh/.zshenv`, or `~/.zshenv` if `~/.zshrc` exists.], for example: `zshrc_blacklist=(50-command-not-found 70-completion)`.
+
 
 === Key Bindings
 
@@ -40,7 +42,7 @@ List of key bindings defined in the `emacs`, `viins`, and `vicmd` keymaps.
 
 == Configuration Variables
 
-Users can define the following configuration variables in their `$ZDOTDIR/.zshenv` (by default `~/.config/zsh/.zshenv`, or `~/.zshenv` if `~/.zshrc` exists) to override the default settings.
+Users can define the following configuration variables in their `$ZDOTDIR/.zshenv`footnote:zshenv[] to override the default settings.
 
 |===
 | Variable Name | Default Value | Description
