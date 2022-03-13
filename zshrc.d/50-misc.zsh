@@ -12,4 +12,9 @@ setopt interactive_comments    # allow comments even in interactive shells
 # Zle
 setopt nobeep                  # do not beep, never ever
 
+# A list of non-alphanum chars considered part of a word by the line editor.
+# Zsh's default is "*?_-.[]~=/&;!#$%^(){}<>", Oh My Zsh's default is "" (empty)
+# which is more consistent with Bash. I find "_-" more useful.
+WORDCHARS='_-'
+
 # vim: set ts=4:
