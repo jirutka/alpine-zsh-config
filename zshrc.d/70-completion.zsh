@@ -45,7 +45,8 @@ zstyle ':completion:*' use-cache yes
 # Arrow key menu for completions.
 zstyle ':completion:*:*:*:*:*' menu select
 
-# Ignore completion functions for commands we don't have.
-zstyle ':completion:*:functions' ignored-patterns '_*'
+# Ignore completion functions for commands we don't have and for "private"
+# functions (prefixed with a dot).
+zstyle ':completion:*:functions' ignored-patterns '_*' '.*'
 
 # vim: set ts=4:
