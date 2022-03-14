@@ -19,15 +19,17 @@ fi
 function () {
 	emulate -L zsh
 
+	# NOTE: We have to redirect stdout/stderr to /dev/null for wl-copy and
+	#  xclip, otherwise terminal hangs when exited!
 	if [[ -n "${WAYLAND_DISPLAY-}" ]] && (( ${+commands[wl-copy]} )); then
 		function .zshrc::clip-copy() {
 			local opts=
 			[[ "$ZSH_CUTBUFFER_CLIPBOARD" = 'primary' ]] && opts='--primary'
-			wl-copy $opts -- "$@"
+			wl-copy $opts -- "$@" >/dev/null 2>&1
 		}
 	elif [[ -n "${DISPLAY-}" ]] && (( ${+commands[xclip]} )); then
 		function .zshrc::clip-copy() {
-			printf '%s' "$*" | xclip -in -selection ${ZSH_CUTBUFFER_CLIPBOARD:-primary}
+			printf '%s' "$*" | xclip -in -selection ${ZSH_CUTBUFFER_CLIPBOARD:-primary} >/dev/null 2>&1
 		}
 	elif (( ${+commands[tty-copy]} )) \
 		&& { (( ${osc52_supported_terms[(Ie)$TERM]} )) || tty-copy --test; };
