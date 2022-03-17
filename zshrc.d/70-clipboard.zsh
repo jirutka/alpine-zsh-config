@@ -40,7 +40,7 @@ function () {
 			tty-copy $opts -- "$@"
 		}
 	else
-		return
+		return 0
 	fi
 
 	autoload -Uz add-zle-hook-widget
