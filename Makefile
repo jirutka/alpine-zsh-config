@@ -1,4 +1,3 @@
-prefix      := $(or $(prefix),$(PREFIX),/usr)
 sysconfdir  := /etc
 
 ZSH_ETCDIR  := $(sysconfdir)/zsh
