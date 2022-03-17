@@ -4,6 +4,10 @@
 // Enable kbd:[] macro
 :experimental:
 
+ifdef::env-github[]
+image:https://github.com/{gh-name}/workflows/CI/badge.svg[Binaries Workflow, link=https://github.com/{gh-name}/actions?query=workflow%3A%22CI%22]
+endif::env-github[]
+
 The aim of this project is to provide a sensible default (system-wide) https://www.zsh.org/[Zsh] configuration that will meet the basic needs and expectations of most users.
 In other words, make Zsh easy to use right out of the box, without having to configure it, while not getting in the way of individual user customization.
 
