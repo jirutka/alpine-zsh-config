@@ -18,7 +18,17 @@ help:
 
 #: Check zsh scripts for errors.
 check:
-	$(ZSH) -c 'source zshrc.d/*.zsh'
+	@$(ZSH) -c '\
+		rc=0;                              \
+		for f in zshrc.d/*.zsh; do         \
+		    if source $$f; then            \
+		        printf "%-33s PASS\n" $$f; \
+		    else                           \
+		        printf "%-35s FAIL\n" $$f; \
+		        rc=1;                      \
+		    fi;                            \
+		done;                              \
+		exit $$rc'
 
 #: Install files into $DESTDIR.
 install:
