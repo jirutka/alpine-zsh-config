@@ -6,8 +6,11 @@ else
 	: ${HISTFILE:=${ZSH_DATA_DIR:?}/history}
 fi
 
-# Save history on disk (default is 0 - disabled).
-[[ "$SAVEHIST" -eq 0 ]] && SAVEHIST="$HISTSIZE"
+# Number of commands that are loaded into memory from the history file (default is 30).
+[[ "$HISTSIZE" -le 100 ]] && HISTSIZE=10000
+
+# Number of commands that are stored in the zsh history file (default is 0).
+[[ "$SAVEHIST" -le 100 ]] && SAVEHIST=100000
 
 setopt extended_history        # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
