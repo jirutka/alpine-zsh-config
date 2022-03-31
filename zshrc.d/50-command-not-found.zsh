@@ -2,7 +2,7 @@
 #
 # TIP: If you want colour output, load 'colors' (autoload -U colors && colors).
 
-command_not_found_handler() {
+function command_not_found_handler() {
 	local cmd=$1
 
 	# Skip handler if STDOUT is not a terminal.
