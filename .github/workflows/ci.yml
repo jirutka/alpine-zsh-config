@@ -10,22 +10,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Download alpine-chroot-install
-        run: |
-          wget https://raw.githubusercontent.com/alpinelinux/alpine-chroot-install/v0.13.3/alpine-chroot-install
-          echo 'c3005e323029637db20ec9595243ac94bb9b2226  alpine-chroot-install' | sha1sum -c
-          chmod +x alpine-chroot-install
-
       - name: Install latest stable Alpine Linux
-        run: |
-          sudo ./alpine-chroot-install \
-            -b latest-stable \
-            -p 'asciidoctor make tree zsh'
+        uses: jirutka/setup-alpine@v1
+        with:
+          packages: >
+            asciidoctor
+            make
+            tree
+            zsh
 
       - name: make check
-        run: /alpine/enter-chroot -u $USER make check
+        run: make check
+        shell: alpine.sh {0}
 
       - name: make install
         run: |
-          /alpine/enter-chroot -u $USER make install DESTDIR=dest
+          make install DESTDIR=dest
           tree dest/
+        shell: alpine.sh {0}
