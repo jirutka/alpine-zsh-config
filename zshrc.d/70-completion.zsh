@@ -57,4 +57,4 @@ function .zshrc::compinit() {
 # and .zlogin are loaded (this hook will remove itself after it is run).
 add-zsh-hook precmd .zshrc::compinit
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

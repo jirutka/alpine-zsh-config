@@ -17,4 +17,4 @@ setopt nobeep                  # do not beep, never ever
 # which is more consistent with Bash. I find "_-" more useful.
 WORDCHARS='_-'
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

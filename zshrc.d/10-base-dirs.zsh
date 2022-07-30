@@ -8,4 +8,4 @@
 : ${ZSH_CACHE_DIR:="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"}
 [[ -d "$ZSH_CACHE_DIR" ]] || install -d -m700 "$ZSH_CACHE_DIR"
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

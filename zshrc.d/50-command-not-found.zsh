@@ -46,4 +46,4 @@ function command_not_found_handler() {
 	return 127
 } >&2
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

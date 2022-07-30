@@ -56,4 +56,4 @@ function () {
 	add-zle-hook-widget line-pre-redraw .zshrc::sync-cutbuffer-with-clipboard
 }
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

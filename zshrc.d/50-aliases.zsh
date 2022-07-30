@@ -7,4 +7,4 @@ alias ....='cd ../../..'
 alias l='ls -Ah'
 alias ll='ls -Ahl'
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:

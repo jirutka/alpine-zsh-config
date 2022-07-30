@@ -20,4 +20,4 @@ setopt hist_ignore_space       # ignore commands that start with space
 setopt hist_verify             # show command with history expansion to user before running it
 setopt share_history           # share command history data
 
-# vim: set ts=4:
+# vim: set ts=4 sw=4:
