@@ -51,9 +51,10 @@ function .zshrc::compinit() {
 		compinit -d "$ZSH_COMPDUMP" -C
 	fi
 
+	autoload -Uz add-zsh-hook
 	add-zsh-hook -d precmd .zshrc::compinit  # remove hook
 }
-# Postpone the initialization of the completion system after the user's .zshrc
+# Defer the initialization of the completion system after the user's .zshrc
 # and .zlogin are loaded (this hook will remove itself after it is run).
 add-zsh-hook precmd .zshrc::compinit
 
