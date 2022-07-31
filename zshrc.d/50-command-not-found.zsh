@@ -16,30 +16,30 @@ function command_not_found_handler() {
 		fg_grey2=$'\e[38;5;250m'
 	fi
 
-	echo "${fg_grey1}apk: searching $cmd...$reset_color"  # <1>
+	print "${fg_grey1}apk: searching $cmd...$reset_color"
 
 	local out
 	out=$(apk search -avx --no-network "cmd:$cmd" \
 			| sed -En 's/^([^ ]+)-[^-]+-r\d+ - (.*)$/\1|\2/p') \
-		&& printf '\033[F\033[K'  # delete line "apk: searching ..."
+		&& print -n '\033[F\033[K'  # delete line "apk: searching ..."
 
 	if [[ $? -eq 0 && -n "$out" ]]; then
 		local pkgs=(${(fou)out})
 
-		echo "${fg_bold[red]}${cmd}$reset_color is not installed, but it can be found in the following packages:"
+		print "${fg_bold[red]}${cmd}$reset_color is not installed, but it can be found in the following packages:"
 
 		local pkg pkgname pkgdesc
 		for pkg ($pkgs); do
 			pkgname=${pkg%%|*}
 			pkgdesc=${pkg#*|}
-			echo "  $bold_color*${reset_color} ${pkgname}$fg_grey2 - ${pkgdesc}$reset_color"
+			print "  $bold_color*${reset_color} ${pkgname}$fg_grey2 - ${pkgdesc}$reset_color"
 		done
 
 		[[ ${#pkgs} -eq 1 ]] || pkgname='<selected package>'
-		echo ''
-		echo "${fg_bold[yellow]}Hint:$reset_color try installing with: ${fg[yellow]}doas apk add ${pkgname}$reset_color"
+		print ''
+		print "${fg_bold[yellow]}Hint:$reset_color try installing with: ${fg[yellow]}doas apk add ${pkgname}$reset_color"
 	else
-		echo "zsh: command not found: $cmd"
+		print "zsh: command not found: $cmd"
 	fi
 
 	return 127
