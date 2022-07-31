@@ -8,7 +8,7 @@ function command_not_found_handler() {
 	# Skip handler if STDOUT is not a terminal.
 	[[ -t 1 ]] || return 127
 
-	emulate -L zsh -o pipefail
+	emulate -L zsh -o pipefail -o no_aliases
 
 	local fg_grey1= fg_grey2=
 	if [[ -n "$reset_color" && -n "${color[red]}" ]]; then

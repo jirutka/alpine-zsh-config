@@ -17,7 +17,7 @@ if (( ! ${+osc52_supported_terms} )); then
 fi
 
 function () {
-	emulate -L zsh
+	emulate -L zsh -o no_aliases
 
 	# NOTE: We have to redirect stdout/stderr to /dev/null for wl-copy and
 	#  xclip, otherwise terminal hangs when exited!

@@ -12,7 +12,7 @@ autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 function () {
-	emulate -L zsh
+	emulate -L zsh -o no_aliases
 
 	# Make sure that the terminal is in application mode when zle is active,
 	# since only then values from $terminfo are valid.

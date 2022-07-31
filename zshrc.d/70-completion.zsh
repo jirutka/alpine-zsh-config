@@ -28,7 +28,7 @@ zstyle ':completion:*:functions' ignored-patterns '_*' '.*'
 # it's older than 24 hours.
 # https://gist.github.com/ctechols/ca1035271ad134841284
 function .zshrc::compinit() {
-	emulate -L zsh -o extendedglob
+	emulate -L zsh -o extendedglob -o no_aliases
 
 	local dir= refresh=0
 
