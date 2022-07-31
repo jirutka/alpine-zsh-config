@@ -28,9 +28,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*' '.*'
 # it's older than 24 hours.
 # https://gist.github.com/ctechols/ca1035271ad134841284
 function .zshrc::compinit() {
-	emulate -L zsh
+	emulate -L zsh -o extendedglob
 
-	setopt extendedglob local_options  # note: we use function to keep this local
 	local dir= refresh=0
 
 	# If zcompdump exists and has been modified in less than 24 hours.
