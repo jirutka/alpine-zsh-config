@@ -3,6 +3,7 @@
 :gh-name: jirutka/{proj-name}
 // Enable kbd:[] macro
 :experimental:
+:osc133-spec-url: https://gitlab.freedesktop.org/Per_Bothner/specifications/blob/master/proposals/semantic-prompts.md
 
 ifdef::env-github[]
 image:https://github.com/{gh-name}/workflows/CI/badge.svg[Binaries Workflow, link=https://github.com/{gh-name}/actions?query=workflow%3A%22CI%22]
@@ -20,6 +21,7 @@ In other words, make Zsh easy to use right out of the box, without having to con
 * Reasonable history defaults. ^link:zshrc.d/50-history.zsh[50-history.zsh]^
 * Global <<Key Bindings,key bindings>> consistent with `/etc/inputrc` (and thus with ash, bash and any other program using readline). ^link:zshrc.d/50-key-bindings.zsh[50-key-bindings.zsh]^
 * Miscellaneous useful options. ^link:zshrc.d/50-misc.zsh[50-misc.zsh]^
+* Support for {osc133-spec-url}[OSC 133 Semantic Prompt] footnote:[OSC 133 allows terminal features such as jumping to the previous/next prompt in the scrollback or opening the output of the last command in a pager. It is supported e.g. in Kitty, WezTerm, iTerm2.]. ^link:zshrc.d/50-semantic-prompt.zsh[50-semantic-prompt.zsh]^
 * Integration with the system clipboard – copies the kill (cut) buffer to the system clipboard on each change (e.g. on kbd:[Ctrl + Insert], kbd:[Ctrl + W], …). ^link:zshrc.d/70-clipboard.zsh[70-clipboard.zsh]^
 * Initialization of the completion system with reasonable defaults and caching. ^link:zshrc.d/70-completion.zsh[70-completion.zsh]^
 
