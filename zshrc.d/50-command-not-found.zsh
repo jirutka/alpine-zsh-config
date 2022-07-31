@@ -35,7 +35,7 @@ function command_not_found_handler() {
 			print "  $bold_color*${reset_color} ${pkgname}$fg_grey2 - ${pkgdesc}$reset_color"
 		done
 
-		[[ ${#pkgs} -eq 1 ]] || pkgname='<selected package>'
+		(( ${#pkgs} == 1 )) || pkgname='<selected package>'
 		print ''
 		print "${fg_bold[yellow]}Hint:$reset_color try installing with: ${fg[yellow]}doas apk add ${pkgname}$reset_color"
 	else
