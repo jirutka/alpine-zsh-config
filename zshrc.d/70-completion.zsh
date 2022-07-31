@@ -30,7 +30,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*' '.*'
 function .zshrc::compinit() {
 	emulate -L zsh -o extendedglob -o no_aliases
 
-	local dir= refresh=0
+	local dir=
+	local -i refresh=0
 
 	# If zcompdump exists and has been modified in less than 24 hours.
 	if [[ ! -f "$ZSH_COMPDUMP" || -n "$ZSH_COMPDUMP"(#qNY1.mh+24) ]]; then
