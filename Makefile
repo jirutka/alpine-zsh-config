@@ -4,6 +4,7 @@ ZSH_ETCDIR  := $(sysconfdir)/zsh
 
 INSTALL     := install
 GIT         := git
+SED         := sed
 ZSH         := zsh
 
 MAKEFILE_PATH  = $(lastword $(MAKEFILE_LIST))
